@@ -1,0 +1,277 @@
+.wakad_page {
+  color: var(--black);
+
+  h1,
+  h2 {
+    font-family: "Nunito", sans-serif;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: var(--black);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+  }
+
+  p {
+    max-width: 760px;
+  }
+}
+
+.wakad_content {
+  width: min(100% - 40px, var(--max-width));
+  margin: 0 auto;
+}
+
+.wakad_hero {
+  display: flex;
+  min-height: 540px;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.38)),
+    url("../../assets/hero/Cinematic_Tattoo_Studio_in_Warm_Shadows.png")
+      center 45% / cover no-repeat;
+}
+
+.wakad_hero_content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  h1 {
+    max-width: 780px;
+    margin: 14px 0 20px;
+    color: var(--white);
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.06;
+  }
+
+  .wakad_hero_description {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+}
+
+.wakad_eyebrow {
+  color: var(--accent) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  text-transform: uppercase;
+}
+
+.wakad_hero .wakad_eyebrow,
+.wakad_cta_section .wakad_eyebrow {
+  color: #d7eaf4 !important;
+}
+
+.wakad_button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--white);
+    background: var(--white);
+    color: var(--accent);
+  }
+}
+
+.wakad_section {
+  padding: 76px 0;
+
+  h2 {
+    margin-top: 10px;
+  }
+}
+
+.wakad_intro {
+  p:last-child {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}
+
+.wakad_services {
+  background: #f5f6f7;
+}
+
+.wakad_card_grid {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.wakad_service_grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.wakad_reasons_grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.wakad_card {
+  display: flex;
+  min-height: 88px;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #e6e8e9;
+  background: var(--white);
+  color: var(--text);
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+
+  span {
+    flex: 0 0 auto;
+    color: var(--accent);
+    font-size: 18px;
+  }
+}
+
+.wakad_cta_section {
+  padding: 76px 0;
+  background:
+    linear-gradient(rgba(8, 24, 34, 0.9), rgba(8, 24, 34, 0.9)),
+    url("../../assets/hero/Cinematic_Tattoo_Studio_in_Warm_Shadows.png")
+      center / cover no-repeat;
+
+  h2,
+  p {
+    color: var(--white);
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  p:not(.wakad_eyebrow) {
+    margin-bottom: 26px;
+    color: rgba(255, 255, 255, 0.86);
+  }
+}
+
+.wakad_button_light {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--accent);
+
+  &:hover,
+  &:focus-visible {
+    border-color: #d7eaf4;
+    background: transparent;
+    color: var(--white);
+  }
+}
+
+.wakad_faq_section {
+  background: #f5f6f7;
+}
+
+.wakad_faq_list {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.wakad_faq {
+  padding: 20px 22px;
+  border: 1px solid #e1e4e6;
+  background: var(--white);
+
+  summary {
+    color: var(--black);
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  p {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wakad_service_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wakad_reasons_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wakad_hero {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 560px) {
+  .wakad_content {
+    width: min(100% - 32px, var(--max-width));
+  }
+
+  .wakad_hero {
+    min-height: 500px;
+    background-position: 58% center;
+  }
+
+  .wakad_hero_content {
+    h1 {
+      font-size: clamp(36px, 11vw, 52px);
+    }
+
+    .wakad_hero_description {
+      font-size: 16px;
+      line-height: 1.65;
+    }
+  }
+
+  .wakad_section,
+  .wakad_cta_section {
+    padding: 56px 0;
+  }
+
+  .wakad_service_grid,
+  .wakad_reasons_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wakad_card {
+    min-height: 72px;
+  }
+
+  .wakad_faq {
+    padding: 17px;
+
+    summary {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wakad_button {
+    transition: none;
+  }
+}

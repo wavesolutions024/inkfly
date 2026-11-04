@@ -98,7 +98,12 @@ const Footer = () => {
         </div>
 
         <div className="footer_bottom">
-          <span>© {new Date().getFullYear()} InkFly Tattoo Studio</span>
+          <span>
+            © {new Date().getFullYear()} Developed by{" "}
+            <a href="https://wavesolutions.in/" target="_blank" rel="noreferrer">
+              Wave Solutions
+            </a>
+          </span>
           <span>Made for the art that stays with you.</span>
         </div>
       </div>

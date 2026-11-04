@@ -84,7 +84,6 @@
             display: inline-block;
             opacity: 0;
             font-size: 58px;
-
             animation: hero-letter-appear 0.45s ease-out forwards;
           }
         }
@@ -138,8 +137,7 @@
 
     .intro_left {
       width: 50%;
-      background: url("../../assets/about/about_img.jpg");
-
+      background: url("../../assets/about/about_img1.jpg");
     }
 
     .intro_right {
@@ -149,7 +147,7 @@
       align-items: center;
       justify-content: center;
       gap: var(--unit);
-      text-align: center;
+      // text-align: center;
       position: relative;
 
       .intro_overlay {
@@ -226,6 +224,17 @@
       .intro_right {
         gap: 12px;
 
+        .intro_overlay {
+          background: url("../../assets/intro_img.png");
+          height: 300px;
+          width: 250px;
+          position: absolute;
+          opacity: 0.09;
+          z-index: -1;
+          top: 20%;
+          left: 10%;
+        }
+
         h2 {
           font-size: clamp(28px, 7vw, 36px);
         }
@@ -257,6 +266,16 @@
       font-size: 40px;
       font-weight: 700;
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .quotes_parent {
+    .quotes_cont {
+      h3 {
+        font-size: 24px;
+      }
     }
   }
 }
@@ -628,6 +647,7 @@
 .parent_middle_quote {
   padding: 70px 0px;
   position: relative;
+  overflow: hidden;
 
   .quotes_overlay {
     background: url(../../assets/background_img.jpg);
@@ -637,8 +657,7 @@
     top: -10%;
     right: -8%;
     z-index: -1;
-    opacity: 0.5;
-
+    opacity: 0.2;
   }
 
   .cont_middle_quote {
@@ -654,6 +673,15 @@
     p {
       text-align: center;
     }
+  }
+}
+
+@media (max-width: 550px) {
+  .parent_middle_quote {
+    .quotes_overlay {
+      display: none;
+    }
+
   }
 }
 

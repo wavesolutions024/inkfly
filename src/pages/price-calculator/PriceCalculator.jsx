@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import PageTop from "../../components/page-top/PageTop";
 import "./PriceCalculator.scss";
 
@@ -29,6 +30,31 @@ const PriceCalculator = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Tattoo Price Calculator | Inkfly Tattoo Studio, Pune</title>
+        <meta
+          name="description"
+          content="Get an initial tattoo or piercing price estimate with Inkfly Tattoo Studio's price calculator. Contact our Wakad, Pune studio to discuss your design."
+        />
+        <meta
+          name="keywords"
+          content="tattoo price calculator Pune, tattoo cost Wakad, tattoo pricing, piercing price Pune, Inkfly Tattoo Studio prices"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="Tattoo Price Calculator | Inkfly Tattoo Studio, Pune"
+        />
+        <meta
+          property="og:description"
+          content="Estimate the starting price for your tattoo or piercing at Inkfly Tattoo Studio in Wakad, Pune."
+        />
+        <meta property="og:type" content="website" />
+        <link
+          rel="canonical"
+          href="https://www.inkflytattoo.com/price-calculator"
+        />
+      </Helmet>
       <PageTop title="PRICE CALCULATOR" details="Plan your next piece" />
 
       <main className="parent calculator_parent">

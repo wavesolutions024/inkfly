@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import PageTop from "../../components/page-top/PageTop";
-import appointmentImage from "../../assets/hero/Cinematic_Tattoo_Studio_in_Warm_Shadows.png";
-import backgroundImage from "../../assets/background_img.jpg";
-import counterImage from "../../assets/counter.webp";
-import eagleDesign from "../../assets/intro_img.png";
-import aboutImage from "../../assets/about/about_img.jpg";
-import artistImage from "../../assets/artists/prashant_inkfly.webp";
-import tattooMachineImage from "../../assets/tattoo_machine.png";
+import { Helmet } from "react-helmet-async";
+import appointmentImage from "../../assets/gallery/img1.JPG";
+import backgroundImage from "../../assets/gallery/img2.webp";
+
 import "./OurWork.scss";
 
 const galleryItems = {
@@ -19,55 +16,21 @@ const galleryItems = {
     },
     {
       title: "Eagle design",
-      image: eagleDesign,
+      image: backgroundImage,
       alt: "Detailed black and white eagle tattoo design",
       shape: "portrait",
     },
-    {
-      title: "Tattoo portrait",
-      image: aboutImage,
-      alt: "Portrait featuring detailed tattoo artwork",
-      shape: "portrait",
-    },
-    {
-      title: "Studio tattoo work",
-      image: backgroundImage,
-      alt: "Tattoo artist working in a studio",
-      shape: "portrait",
-    },
   ],
-  piercing: [
-    {
-      title: "Tattooing in progress",
-      image: counterImage,
-      alt: "Tattoo artist working on a tattoo",
-      shape: "landscape",
-    },
-    {
-      title: "Tattoo machine",
-      image: tattooMachineImage,
-      alt: "Tattoo machine used to create detailed body art",
-      shape: "portrait",
-    },
-    {
-      title: "Meet the artist",
-      image: artistImage,
-      alt: "Inkfly tattoo artist",
-      shape: "portrait",
-    },
-    {
-      title: "Tattoo studio",
-      image: appointmentImage,
-      alt: "Tattoo artist working with a client in the studio",
-      shape: "portrait",
-    },
-  ],
+  piercing: [],
 };
 
 const OurWork = () => {
   const [activeCategory, setActiveCategory] = useState("tattoo");
   const [selectedImage, setSelectedImage] = useState(null);
-  const visibleItems = galleryItems[activeCategory];
+  const [failedImages, setFailedImages] = useState(() => new Set());
+  const visibleItems = galleryItems[activeCategory].filter(
+    (item) => !failedImages.has(item.image),
+  );
 
   useEffect(() => {
     if (!selectedImage) return undefined;
@@ -82,6 +45,28 @@ const OurWork = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Tattoo Portfolio | Inkfly Tattoo Studio, Pune</title>
+        <meta
+          name="description"
+          content="Explore tattoo artwork and studio work from Inkfly Tattoo Studio in Wakad, Pune, including custom designs and detailed tattoo artistry."
+        />
+        <meta
+          name="keywords"
+          content="tattoo portfolio Pune, tattoo designs Wakad, Inkfly Tattoo artwork, custom tattoo gallery, tattoo studio portfolio"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="Tattoo Portfolio | Inkfly Tattoo Studio, Pune"
+        />
+        <meta
+          property="og:description"
+          content="Browse creative tattoo designs and artwork from Inkfly Tattoo Studio in Wakad, Pune."
+        />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.inkflytattoo.com/our-work" />
+      </Helmet>
       <PageTop title="OUR WORK" details="A closer look at our artistry" />
 
       <main className="parent our_work_parent">
@@ -113,21 +98,42 @@ const OurWork = () => {
           </div>
 
           <div className="our_work_gallery" aria-live="polite">
-            {visibleItems.map((item) => (
-              <button
-                type="button"
-                className={`our_work_item ${item.shape}`}
-                key={item.title}
-                onClick={() => setSelectedImage(item)}
-                aria-label={`View ${item.title}`}
-              >
-                <img src={item.image} alt={item.alt} loading="lazy" />
-                <span className="our_work_item_caption">{item.title}</span>
-                <span className="our_work_item_expand" aria-hidden="true">
-                  +
+            {visibleItems.length > 0 ? (
+              visibleItems.map((item) => (
+                <button
+                  type="button"
+                  className={`our_work_item ${item.shape}`}
+                  key={item.title}
+                  onClick={() => setSelectedImage(item)}
+                  aria-label={`View ${item.title}`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    loading="lazy"
+                    onError={() => {
+                      setFailedImages((previousImages) => {
+                        const nextImages = new Set(previousImages);
+                        nextImages.add(item.image);
+                        return nextImages;
+                      });
+                    }}
+                  />
+                  {/* <span className="our_work_item_caption">{item.title}</span> */}
+                  <span className="our_work_item_expand" aria-hidden="true">
+                    +
+                  </span>
+                </button>
+              ))
+            ) : (
+              <div className="our_work_empty" role="status">
+                <span className="our_work_empty_mark" aria-hidden="true">
+                  ✦
                 </span>
-              </button>
-            ))}
+                <h2>No images found</h2>
+                <p>There are no images available in this category yet.</p>
+              </div>
+            )}
           </div>
         </div>
       </main>

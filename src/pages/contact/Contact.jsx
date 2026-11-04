@@ -2,6 +2,7 @@ import { CiLocationOn, CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import "./Contact.scss";
 import PageTop from "../../components/page-top/PageTop";
+import { Helmet } from "react-helmet-async";
 
 const contactDetails = [
   {
@@ -43,6 +44,28 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Inkfly Tattoo Studio | Wakad, Pune</title>
+        <meta
+          name="description"
+          content="Contact Inkfly Tattoo Studio in Wakad, Pune, to discuss custom tattoo designs, ask a question or book your tattoo appointment."
+        />
+        <meta
+          name="keywords"
+          content="contact Inkfly Tattoo Studio, book tattoo appointment Wakad, tattoo consultation Pune, tattoo studio address Wakad, tattoo artist contact"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="Contact Inkfly Tattoo Studio | Wakad, Pune"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with Inkfly Tattoo Studio in Wakad, Pune, and plan your next tattoo."
+        />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.inkflytattoo.com/contact" />
+      </Helmet>
       <PageTop
         title="GET IN TOUCH"
         details="Connect With Our Tattoo Studio in Pune"

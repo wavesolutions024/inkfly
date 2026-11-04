@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./About.scss";
 import PageTop from "../../components/page-top/PageTop";
+import { Helmet } from "react-helmet-async";
 const About = () => {
   const sectionRef = useRef(null);
   const [counts, setCounts] = useState([0, 0, 0, 0]);
@@ -66,6 +67,28 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>About Inkfly Tattoo Studio | Wakad, Pune</title>
+        <meta
+          name="description"
+          content="Learn about Inkfly Tattoo Studio in Wakad, Pune, and our approach to personalised tattoo designs, creative artistry and comfortable studio experiences."
+        />
+        <meta
+          name="keywords"
+          content="about Inkfly Tattoo Studio, tattoo studio Wakad, tattoo artist Pune, custom tattoo artistry, tattoo studio story"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="About Inkfly Tattoo Studio | Wakad, Pune"
+        />
+        <meta
+          property="og:description"
+          content="Discover the people and creative approach behind Inkfly Tattoo Studio in Wakad, Pune."
+        />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://www.inkflytattoo.com/about" />
+      </Helmet>
       <PageTop title="OUR STORY" details={"The Art Behind Every Ink "} />
 
       <div className="parent intro_parent home_intro_parent">

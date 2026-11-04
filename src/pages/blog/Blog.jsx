@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import PageTop from "../../components/page-top/PageTop";
 import blogPosts from "./blogData";
 import "./Blog.scss";
@@ -33,6 +34,28 @@ const BlogCard = ({ post }) => (
 
 const BlogListing = () => (
   <>
+    <Helmet>
+      <title>Tattoo Blog & Guides | Inkfly Tattoo Studio, Pune</title>
+      <meta
+        name="description"
+        content="Explore tattoo aftercare advice, custom design inspiration and helpful tattoo guides from Inkfly Tattoo Studio in Wakad, Pune."
+      />
+      <meta
+        name="keywords"
+        content="tattoo blog Pune, tattoo aftercare tips, custom tattoo design ideas, tattoo guides, tattoo inspiration"
+      />
+      <meta name="robots" content="index, follow" />
+      <meta
+        property="og:title"
+        content="Tattoo Blog & Guides | Inkfly Tattoo Studio, Pune"
+      />
+      <meta
+        property="og:description"
+        content="Read tattoo care tips, design guides and inspiration from Inkfly Tattoo Studio."
+      />
+      <meta property="og:type" content="website" />
+      <link rel="canonical" href="https://www.inkflytattoo.com/blogs" />
+    </Helmet>
     <PageTop title="THE INKFLY JOURNAL" details="Stories behind the ink" />
     <main className="parent blog_parent">
       <div className="cont blog_cont">
@@ -51,6 +74,26 @@ const BlogListing = () => (
 
 const BlogDetail = ({ post }) => (
   <>
+    <Helmet>
+      <title>{`${post.title} | Inkfly Tattoo Studio`}</title>
+      <meta name="description" content={post.excerpt} />
+      <meta
+        name="keywords"
+        content={`${post.title}, ${post.category} advice, tattoo guide, tattoo tips Pune, Inkfly Tattoo Studio`}
+      />
+      <meta name="robots" content="index, follow" />
+      <meta property="og:title" content={`${post.title} | Inkfly Tattoo Studio`} />
+      <meta property="og:description" content={post.excerpt} />
+      <meta property="og:type" content="article" />
+      <meta
+        property="og:image"
+        content={`https://www.inkflytattoo.com${post.image}`}
+      />
+      <link
+        rel="canonical"
+        href={`https://www.inkflytattoo.com/blogs/${post.slug}`}
+      />
+    </Helmet>
     <PageTop title={post.category.toUpperCase()} details={post.title} />
     <main className="parent blog_article_parent">
       <article className="blog_article">
@@ -115,6 +158,15 @@ const Blog = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Story Not Found | Inkfly Tattoo Studio</title>
+        <meta
+          name="description"
+          content="This Inkfly Tattoo Studio story could not be found. Browse our tattoo articles and guides."
+        />
+        <meta name="keywords" content="Inkfly Tattoo Studio blog, tattoo articles, tattoo guides" />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <PageTop title="STORY NOT FOUND" details="This page isn't here" />
       <main className="parent blog_not_found">
         <h1>We couldn't find that story.</h1>

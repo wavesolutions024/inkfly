@@ -166,3 +166,17 @@ a {
   color: var(--accent);
   text-transform: uppercase;
 }
+
+@media (max-width: 600px) {
+  .indicator {
+    text-align: center !important;
+  }
+}
+
+
+@media(max-width:600px){
+  h2{
+    font-size:24px;
+    text-align:center;
+  }
+}

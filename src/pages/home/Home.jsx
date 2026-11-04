@@ -5,6 +5,17 @@ import "./Home.scss";
 import appointment_img from "../../assets/hero/Cinematic_Tattoo_Studio_in_Warm_Shadows.png";
 import about_img from "../../assets/about/about_img.jpg";
 import background_img from "../../assets/background_img.jpg";
+import tattooMachine from "../../assets/tattoo_machine.webp";
+
+import modification from "../../assets/services/modification.jpeg";
+import consultation from "../../assets/services/consultation.webp";
+import coverup from "../../assets/services/coverup.jpeg";
+import fine_line from "../../assets/services/fine_line.jpeg";
+import geometric from "../../assets/services/geometric.jpeg";
+import mandal_tattoo from "../../assets/services/mandal_tattoo.jpeg";
+import tattoo_design from "../../assets/services/tattoo_design.jpeg";
+import tribal from "../../assets/services/tribal.jpeg";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import {
@@ -20,49 +31,50 @@ import "swiper/css";
 import "swiper/css/pagination";
 import prashant from "../../assets/artists/prashant_inkfly.webp";
 import blogPosts from "../blog/blogData";
+import { Helmet } from "react-helmet-async";
 
 const heroHeading = "Best Tattoo Studio in Wakad & Baner";
 
 const serviceCards = [
   {
     name: "Modifications",
-    image: prashant,
-    alt: "Tattoo artist available for tattoo modifications",
+    image: modification,
+    alt: "Tattoo modification artwork and detail work",
   },
   {
     name: "Tattoo Design",
-    image: appointment_img,
+    image: tattoo_design,
     alt: "Tattoo artist working on a custom tattoo design",
   },
   {
     name: "Consultation",
-    image: about_img,
-    alt: "Tattoo artist ready to discuss a custom design",
+    image: consultation,
+    alt: "Tattoo artist consulting on a custom tattoo concept",
   },
   {
     name: "Tribal Tattoo",
-    image: background_img,
-    alt: "Tattoo artist creating a detailed blackwork tattoo",
+    image: tribal,
+    alt: "Detailed tribal tattoo artwork in a tattoo studio",
   },
   {
     name: "Cover-Up Tattoos",
-    image: appointment_img,
-    alt: "Tattoo artist creating a detailed blackwork tattoo",
+    image: coverup,
+    alt: "Cover-up tattoo transformation on skin",
   },
   {
     name: "Geometric Tattoos",
-    image: appointment_img,
-    alt: "Tattoo artist creating a detailed blackwork tattoo",
+    image: geometric,
+    alt: "Precise geometric tattoo artwork with clean patterns",
   },
   {
     name: "Mandala Tattoos",
-    image: appointment_img,
-    alt: "Tattoo artist creating a detailed blackwork tattoo",
+    image: mandal_tattoo,
+    alt: "Spiritual mandala tattoo design in black and grey",
   },
   {
     name: "Fine Line Tattoos",
-    image: appointment_img,
-    alt: "Tattoo artist creating a detailed blackwork tattoo",
+    image: fine_line,
+    alt: "Fine line tattoo detail with delicate artistry",
   },
 ];
 
@@ -175,7 +187,37 @@ const Home = () => {
     <>
       {/*hero section  */}
 
-      <div className="parent hero_parent bg-img-cover" id="home">
+      <Helmet>
+        <title>Inkfly Tattoo Studio | Best Tattoo Shop in Wakad, Pune</title>
+
+        <meta
+          name="description"
+          content="Looking for the best tattoo studio in Wakad, Pune? Visit Inkfly Tattoo Studio for custom tattoo designs, fine line tattoos, cover-ups and professional tattoo services."
+        />
+
+        <meta
+          name="keywords"
+          content="best tattoo studio in Wakad, tattoo shop in Wakad, tattoo artist in Wakad, best tattoo shop in Pune, tattoo studio near me, custom tattoo designs Pune, fine line tattoo Pune, cover up tattoo Pune, Inkfly Tattoo Studio"
+        />
+
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="og:title"
+          content="Inkfly Tattoo Studio | Wakad, Pune"
+        />
+
+        <meta
+          property="og:description"
+          content="Discover custom tattoo designs, fine line tattoos and professional tattoo services at Inkfly Tattoo Studio, Wakad, Pune."
+        />
+
+        <meta property="og:type" content="website" />
+
+        <link rel="canonical" href="https://www.inkflytattoo.com/" />
+      </Helmet>
+
+      <div className="parent hero_parent bg-img-cover">
         <div className="cont hero_cont">
           <div className="left_hero">
             <span className="indicator">
@@ -209,7 +251,7 @@ const Home = () => {
                 );
               })}
             </h1>
-            <p style={{color:"#ffffffcb"}}>
+            <p style={{ color: "#ffffffcb" }}>
               Discover unique custom tattoo designs at Inkfly Tattoo Studio,
               Wakad, Pune. From minimalist tattoos to detailed artwork and
               cover-up tattoos, our skilled tattoo artists bring your ideas to
@@ -228,26 +270,7 @@ const Home = () => {
 
       <div className="parent intro_parent home_intro_parent">
         <div className="cont intro_cont">
-          <div className="intro_left bg-img-cover">
-            {/* <div
-              className={`img1 ${activeImage === "red" ? "active" : ""}`}
-              onMouseEnter={() => setActiveImage("red")}
-              onMouseLeave={() => setActiveImage("")}
-            ></div>
-
-            <div
-              className={`img2 ${activeImage === "blue" ? "active" : ""}`}
-              onMouseEnter={() => setActiveImage("blue")}
-              onMouseLeave={() => setActiveImage("")}
-            ></div>
-
-            <div
-              className={`img3 ${activeImage === "yellow" ? "active" : ""}`}
-              onClick={() =>
-                setActiveImage(activeImage === "yellow" ? "" : "yellow")
-              }
-            ></div> */}
-          </div>
+          <div className="intro_left bg-img-cover"></div>
 
           <div className="intro_right">
             <div className="intro_overlay bg-img-cover"></div>
@@ -350,7 +373,7 @@ const Home = () => {
 
       {/* artists */}
 
-      <div className="parent artists_parent">
+      {/* <div className="parent artists_parent">
         <div className="cont artists_cont">
           <span className="indicator" style={{ color: "white" }}>
             Meet the team
@@ -395,7 +418,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* quotes */}
       <div className="parent parent_middle_quote">

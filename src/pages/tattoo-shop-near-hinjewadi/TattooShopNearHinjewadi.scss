@@ -1,0 +1,222 @@
+.hinjewadi_page {
+  color: var(--black);
+
+  h1,
+  h2 {
+    font-family: "Nunito", sans-serif;
+  }
+
+  h2 {
+    margin: 10px 0 20px;
+    color: var(--black);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+  }
+
+  p {
+    max-width: 760px;
+  }
+}
+
+.hinjewadi_content {
+  width: min(100% - 40px, var(--max-width));
+  margin: 0 auto;
+}
+
+.hinjewadi_hero {
+  display: flex;
+  min-height: 540px;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.38)),
+    url("../../assets/hero/Cinematic_Tattoo_Studio_in_Warm_Shadows.png")
+      center 45% / cover no-repeat;
+}
+
+.hinjewadi_hero_content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  h1 {
+    max-width: 780px;
+    margin: 14px 0 20px;
+    color: var(--white);
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.06;
+  }
+
+  .hinjewadi_hero_description {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+}
+
+.hinjewadi_eyebrow {
+  color: var(--accent) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  text-transform: uppercase;
+}
+
+.hinjewadi_hero .hinjewadi_eyebrow,
+.hinjewadi_cta .hinjewadi_eyebrow {
+  color: #d7eaf4 !important;
+}
+
+.hinjewadi_button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--white);
+    background: var(--white);
+    color: var(--accent);
+  }
+}
+
+.hinjewadi_section,
+.hinjewadi_cta {
+  padding: 76px 0;
+}
+
+.hinjewadi_section > .hinjewadi_content > p:not(.hinjewadi_eyebrow),
+.hinjewadi_cta > .hinjewadi_content > p:not(.hinjewadi_eyebrow) {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hinjewadi_styles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 760px;
+  padding: 0;
+  margin-top: 28px;
+  list-style: none;
+
+  li {
+    padding: 16px;
+    border: 1px solid #e6e8e9;
+    background: #fff;
+    color: var(--text);
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.hinjewadi_location_section {
+  background: #f5f6f7;
+}
+
+.hinjewadi_text_link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+}
+
+.hinjewadi_cta {
+  background:
+    linear-gradient(rgba(8, 24, 34, 0.9), rgba(8, 24, 34, 0.9)),
+    url("../../assets/hero/Cinematic_Tattoo_Studio_in_Warm_Shadows.png")
+      center / cover no-repeat;
+
+  h2,
+  p:not(.hinjewadi_eyebrow) {
+    color: var(--white);
+  }
+
+  p:not(.hinjewadi_eyebrow) {
+    margin-bottom: 26px;
+    color: rgba(255, 255, 255, 0.86);
+  }
+}
+
+.hinjewadi_button_light {
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--accent);
+
+  &:hover,
+  &:focus-visible {
+    border-color: #d7eaf4;
+    background: transparent;
+    color: var(--white);
+  }
+}
+
+@media (max-width: 800px) {
+  .hinjewadi_hero {
+    min-height: 480px;
+  }
+
+  .hinjewadi_styles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .hinjewadi_content {
+    width: min(100% - 32px, var(--max-width));
+  }
+
+  .hinjewadi_hero {
+    min-height: 500px;
+    background-position: 58% center;
+  }
+
+  .hinjewadi_hero_content {
+    h1 {
+      font-size: clamp(36px, 11vw, 52px);
+    }
+
+    .hinjewadi_hero_description {
+      font-size: 16px;
+      line-height: 1.65;
+    }
+  }
+
+  .hinjewadi_section,
+  .hinjewadi_cta {
+    padding: 56px 0;
+  }
+
+  .hinjewadi_styles {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hinjewadi_button {
+    transition: none;
+  }
+}
