@@ -6,12 +6,12 @@ const About = () => {
   const sectionRef = useRef(null);
   const [counts, setCounts] = useState([0, 0, 0, 0]);
 
-  const targets = [910, 910, 910, 910];
+  const targets = [910, 850, 150, 5];
   const labels = [
     "Tattoo Design",
-    "Tattoo Design",
-    "Piercing Done",
     "Happy Clients",
+    "Piercing Done",
+    "Years of Experience",
   ];
 
   useEffect(() => {
@@ -99,7 +99,7 @@ const About = () => {
             <div className="intro_overlay bg-img-cover"></div>
             <span className="indicator">ABOUT INKFLY TATTOO</span>
 
-            <h2>More Than Ink. It's Your Story, Our Art.</h2>
+            <h2>Where Creativity Meets the Art of Tattooing.</h2>
 
             {/* <img src={intro_img} alt="Tattoo Shop introduction" /> */}
 
@@ -108,16 +108,16 @@ const About = () => {
               <span style={{ fontWeight: "bold" }}>
                 Inkfly Tattoo Studio, Wakad, Pune
               </span>
-              , we turn your ideas into meaningful works of art. From minimal
-              designs to detailed custom tattoos, our focus is on creativity,
-              precision and making every tattoo uniquely yours.
+              ,we believe that every tattoo has a story, every design carries an
+              emotion, and every piece of art deserves to be unique.
             </p>
 
             <p>
-              With a passion for tattoo artistry and attention to every detail,
-              we strive to deliver an experience built on comfort, creativity
-              and quality. From your first idea to the final artwork, we're here
-              to make your tattoo journey special.
+              Our journey is driven by a passion for transforming ideas into
+              timeless body art. Whether it's your first tattoo, a meaningful
+              symbol, a creative expression, or a completely custom design, we
+              bring your vision to life with artistic precision and attention to
+              detail.
             </p>
 
             <button className="btn">
@@ -188,7 +188,6 @@ const About = () => {
 
       {/* our journey */}
       <section className="parent journey_parent">
-
         <div className="cont journey_cont">
           <div className="journey_intro">
             <div className="journey_intro_overlay bg-img-cover"></div>

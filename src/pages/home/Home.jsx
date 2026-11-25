@@ -29,7 +29,9 @@ import {
 
 import "swiper/css";
 import "swiper/css/pagination";
-import prashant from "../../assets/artists/prashant_inkfly.webp";
+import prashant from "../../assets/artists/prashant_ba.png";
+import akshay_patil from "../../assets/artists/akshay_p.png";
+import akshay_chaudhary from "../../assets/artists/akshay_c.png";
 import blogPosts from "../blog/blogData";
 import { Helmet } from "react-helmet-async";
 
@@ -298,8 +300,10 @@ const Home = () => {
             </p>
 
             <button className="btn">
-              <p className="first_btn">Discover Our Story</p>
-              <p className="second_btn">Discover Our Story</p>
+              <a href="/about">
+                <p className="first_btn">Discover Our Story</p>
+                <p className="second_btn">Discover Our Story</p>
+              </a>
             </button>
           </div>
         </div>
@@ -363,17 +367,19 @@ const Home = () => {
               experience.
             </p>
 
-            <div className="btn">
-              <div className="first_btn">Book Your Appointment</div>
-              <div className="second_btn">Book Your Appointment</div>
-            </div>
+            <a href="#appointment">
+              <div className="btn">
+                <div className="first_btn">Book Your Appointment</div>
+                <div className="second_btn">Book Your Appointment</div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
 
       {/* artists */}
 
-      {/* <div className="parent artists_parent">
+      <div className="parent artists_parent">
         <div className="cont artists_cont">
           <span className="indicator" style={{ color: "white" }}>
             Meet the team
@@ -385,10 +391,10 @@ const Home = () => {
               <div className="artist_block">
                 <img
                   src={prashant}
-                  alt="Akshay Patil, tattoo artist"
+                  alt="Prashant, tattoo artist"
                   loading="lazy"
                 />
-                <h3>Akshay Patil</h3>
+                <h3>PRASHANT BHIMANPALLI</h3>
                 <span>Tattoo Artist</span>
               </div>
             </div>
@@ -396,11 +402,11 @@ const Home = () => {
             <div className="artist_block_main artist_block_featured">
               <div className="artist_block">
                 <img
-                  src={prashant}
+                  src={akshay_patil}
                   alt="Akshay Patil, tattoo artist"
                   loading="lazy"
                 />
-                <h3>Akshay Patil</h3>
+                <h3>AKSHAY PATIL</h3>
                 <span>Tattoo Artist</span>
               </div>
             </div>
@@ -408,17 +414,17 @@ const Home = () => {
             <div className="artist_block_main">
               <div className="artist_block">
                 <img
-                  src={prashant}
-                  alt="Akshay Patil, tattoo artist"
+                  src={akshay_chaudhary}
+                  alt="Akshay Chaudhary, tattoo artist"
                   loading="lazy"
                 />
-                <h3>Akshay Patil</h3>
+                <h3>AKSHAY CHAUDHARY</h3>
                 <span>Tattoo Artist</span>
               </div>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* quotes */}
       <div className="parent parent_middle_quote">
@@ -436,10 +442,12 @@ const Home = () => {
             . Let's transform your memories, emotions and imagination into
             artwork that stays with you forever.
           </p>
-          <div className="btn">
-            <div className="first_btn">MAKE AN APPOINTMENT</div>
-            <div className="second_btn">MAKE AN APPOINTMENT</div>
-          </div>
+          <a href="#appointment">
+            <div className="btn">
+              <div className="first_btn">MAKE AN APPOINTMENT</div>
+              <div className="second_btn">MAKE AN APPOINTMENT</div>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -657,10 +665,10 @@ const Home = () => {
             custom tattoo designs and creative artistry at Inkfly Tattoo Studio,
             Wakad, Pune.
           </h2>
-          <button className="btn">
+          <a className="btn" href="#appointment">
             <p className="first_btn">Make an Appointment</p>
             <p className="second_btn">Make an Appointment</p>
-          </button>
+          </a>
         </div>
       </div>
     </>
